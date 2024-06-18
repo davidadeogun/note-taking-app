@@ -5,7 +5,6 @@ A simple note-taking application built with HTML, CSS, JavaScript, Node.js, Expr
 ## Features
 
 - Add new notes
-- Edit existing notes
 - Delete notes
 - View all notes
 
@@ -14,14 +13,18 @@ A simple note-taking application built with HTML, CSS, JavaScript, Node.js, Expr
 - Frontend: HTML, CSS, JavaScript
 - Backend: Node.js, Express
 - Database: MongoDB
-- Deployment: Heroku (for backend) and Vercel (for frontend)
+- Deployment: Vercel (for backend and frontend)
 
 ## Prerequisites
 
 - Node.js and npm installed
 - MongoDB Atlas account or local MongoDB setup
-- Heroku account
 - Vercel account
+
+## Acknowledgements
+- Node.js
+- Express
+- MongoDB
 
 ## Getting Started
 
@@ -48,4 +51,3 @@ Acknowledgements
 Node.js
 Express
 MongoDB
-Heroku

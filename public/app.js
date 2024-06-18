@@ -19,16 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         noteText.innerText = note.content;
         noteElement.appendChild(noteText);
   
-        const editButton = document.createElement('button');
-        editButton.innerText = 'Edit';
-        editButton.addEventListener('click', () => editNote(note._id, note.content));
-        noteElement.appendChild(editButton);
-  
-        const deleteButton = document.createElement('button');
-        deleteButton.innerText = 'Delete';
-        deleteButton.addEventListener('click', () => deleteNote(note._id));
-        noteElement.appendChild(deleteButton);
-  
         notesContainer.appendChild(noteElement);
       });
     };
@@ -42,31 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ content })
       });
       return response.json();
-    };
-  
-    const updateNote = async (id, content) => {
-      const response = await fetch(`/api/notes/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ content })
-      });
-      return response.json();
-    };
-  
-    const deleteNote = async (id) => {
-      await fetch(`/api/notes/${id}`, {
-        method: 'DELETE'
-      });
-      fetchNotes();
-    };
-  
-    const editNote = (id, content) => {
-      const newContent = prompt('Edit your note:', content);
-      if (newContent !== null) {
-        updateNote(id, newContent).then(() => fetchNotes());
-      }
     };
   
     noteForm.addEventListener('submit', async (e) => {
